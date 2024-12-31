@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     //Rotate around the Vector 3 * the speed in which i am rotating * my current framerate * the rotationInput that i give it
         transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime * -rotationInput); 
         
+        //this block of code is for boundaries
         if(transform.position.y > screenBoundary){ //to keep the position of the player inside the box
             transform.position = new Vector2(transform.position.x,screenBoundary);
         }else if(transform.position.y <  -screenBoundary){
